@@ -46,6 +46,7 @@ namespace WPFapp
             new ProductOrderModel(){ ProductModels = new[] { new ProductModel() { ImagePath = "/Images/product5.jpg", Name = "Ветчина и грибы", Price = 439 } } },
             new ProductOrderModel(){ ProductModels = new[] { new ProductModel() { ImagePath = "/Images/product6.jpg", Name = "Папа Микс", Price = 869 } } },
             new ProductOrderModel(){ ProductModels = new[] { new ProductModel() { ImagePath = "/Images/product7.jpg", Name = "Мясное Удовольствие", Price = 509 } } } 
+
         };
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)

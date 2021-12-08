@@ -10,13 +10,16 @@ namespace WPFapp
     public partial class OrderPage : Page
     {
         public ObservableCollection<OrderList> Orderss { get; set; }
-        
+
 
         public ProductModel[] productModel;
-        public OrderPage()
+        public OrderPage(ObservableCollection<ProductOrderModel> product)
         {
+
             InitializeComponent();
-           
+            listOrder.ItemsSource = product;
+
+            MessageBox.Show(product[1].Count.ToString());
             
         }
 

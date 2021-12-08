@@ -15,21 +15,27 @@
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical" Background="White">
-            <ListBox x:Name="listOrder" ItemsSource="{Binding ProductOrderModel}" BorderBrush="{x:Null}">
-                <ListBox.ItemTemplate>
+            <ListView x:Name="listOrder" ItemsSource="{Binding ProductOrderModel}" BorderBrush="{x:Null}">
+                <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid>  
-                            <StackPanel Orientation="Horizontal" >
-                                <TextBlock x:Name="Name" FontSize="16" Text="{Binding ElementName=NameProduct}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                        <Grid>
+
+                            <ListView ItemsSource="{Binding ProductModels}" BorderBrush="{x:Null}">
+                                <StackPanel Orientation="Horizontal" >
+                                    <TextBlock x:Name="Name" FontSize="16" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+                                    <Label Content="-" FontSize="16" FontWeight="Bold" Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Stretch"></Label>
+                                    <TextBlock x:Name="Price" Text="{Binding Price}" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"></TextBlock>
+                                </StackPanel>
+                            </ListView>
+                            
+                            <StackPanel>
                                 <Label Content="-" FontSize="16" FontWeight="Bold" Margin="5,0,5,0" VerticalAlignment="Stretch" HorizontalAlignment="Center"></Label>
-                                <TextBlock x:Name="CountProduct" FontSize="16" Text="{Binding ElementName=CountProduct}" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
-                                <Label Content="-" FontSize="16" FontWeight="Bold" Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Stretch"></Label>
-                                <TextBlock x:Name="Price" Text="{Binding ElementName=Price}" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"></TextBlock>
+                                <TextBlock x:Name="CountProduct" FontSize="16" Text="{Binding Count}" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
                             </StackPanel>
                         </Grid>
                     </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                </ListView.ItemTemplate>
+            </ListView>
 
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">

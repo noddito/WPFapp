@@ -1,0 +1,32 @@
+﻿<Page x:Class="WPFapp.OrdersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFapp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="400"
+      Title="OrdersPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="245*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical" Grid.RowSpan="2">
+            <ListBox x:Name="listOrders" ItemsSource="{Binding OrdersList}" BorderBrush="{x:Null}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="#FF0F0404" OpacityMask="Black" BorderThickness="1" Width="300">
+                            <TextBlock Text="{Binding Path=Name}" FontSize="20" FontWeight="Bold" Margin="3"></TextBlock>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+            </ListBox>
+        </StackPanel>
+        <Button Content="Вернуться" HorizontalAlignment="Center" VerticalAlignment="Center"  
+                Background="{x:Null}" BorderBrush="Black" OpacityMask="Black" 
+                FontSize="20" FontFamily="Arial Black" Click="backOrders" Grid.Row="1" Width="298"/>
+    </Grid>
+</Page>

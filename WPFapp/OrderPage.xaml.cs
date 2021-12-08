@@ -7,8 +7,10 @@ using System.Windows.Navigation;
 namespace WPFapp
 {
 
+
     public partial class OrderPage : Page
     {
+        public int FinalPrice;
         public ObservableCollection<OrderList> Orderss { get; set; }
 
 
@@ -18,8 +20,6 @@ namespace WPFapp
 
             InitializeComponent();
             listOrder.ItemsSource = product;
-
-            MessageBox.Show(product[1].Count.ToString());
             
         }
 

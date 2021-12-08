@@ -14,11 +14,11 @@
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Vertical" Grid.RowSpan="2">
-            <ListBox x:Name="listOrders" ItemsSource="{Binding OrdersList}" BorderBrush="{x:Null}">
+            <ListBox x:Name="listOrders" ItemsSource="{Binding product}" BorderBrush="{x:Null}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border BorderBrush="#FF0F0404" OpacityMask="Black" BorderThickness="1" Width="300">
-                            <TextBlock Text="{Binding Path=Name}" FontSize="20" FontWeight="Bold" Margin="3"></TextBlock>
+                            <TextBlock Text="{Binding Id}" FontSize="20" FontWeight="Bold" Margin="3"></TextBlock>
                         </Border>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

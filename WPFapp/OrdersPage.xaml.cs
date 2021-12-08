@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp1.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -22,10 +23,11 @@ namespace WPFapp
     /// </summary>
     public partial class OrdersPage : Page
     {
-        public ObservableCollection<OrderList> Orderss { get; set; }
-        public OrdersPage()
+        public List<ProductOrderModel> Orderss { get; set; }
+        public OrdersPage(ObservableCollection<ProductOrderModel> product)
         {
             InitializeComponent();
+            
         }
 
         private void backOrders(object sender, RoutedEventArgs e)

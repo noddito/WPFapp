@@ -10,23 +10,32 @@ namespace WPFapp
 
     public partial class OrderPage : Page
     {
-        public int FinalPrice;
-        public ObservableCollection<OrderList> Orderss { get; set; }
+        
+        public ObservableCollection<ProductOrderModel> Orderss { get; set; }
 
+        public class Data 
+        {
 
-        public ProductModel[] productModel;
-        public OrderPage(ObservableCollection<ProductOrderModel> product)
+            public decimal FinalPrice { get; set; }
+
+        }
+
+        public OrderPage(ObservableCollection<ProductOrderModel> product , decimal finalPrice)
         {
 
             InitializeComponent();
             listOrder.ItemsSource = product;
-            
+            Data data = new Data() { FinalPrice = finalPrice};
+            DataContext = data;
+            Orderss = product;
         }
+
 
         public class OrderList
         {
             public int Id { get; set; }
             public string Name { get; set; }
+
             public ProductModel[] productModel;
 
 
@@ -35,7 +44,7 @@ namespace WPFapp
         private void orders_Click(object sender, RoutedEventArgs e)
         {
 
-            NavigationService.Navigate(new OrdersPage());
+            NavigationService.Navigate(new OrdersPage(Orderss));
 
         }
 

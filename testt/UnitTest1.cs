@@ -40,7 +40,7 @@ namespace testt
             new object[] {
                  new List<ProductOrderModel>()
                 {new ProductOrderModel{
-                    productModels  =new ProductModel{Id = 1, Name = "Хлеб", Price = 12}
+                    ProductModels  =new ProductModel[]{new ProductModel(){Id = 1, Name = "Хлеб", Price = 12} }
                 } },
                 "Хлеб свежий", "Екатеринбург" }
         };
@@ -62,11 +62,11 @@ namespace testt
             new object[] {
                 new List<ProductOrderModel>()
                 {new ProductOrderModel{
-                    productModels  =new ProductModel{Id = 1, Name = "Хлеб", Price = 12}
+                    ProductModels  =new ProductModel[]{new ProductModel(){Id = 1, Name = "Хлеб", Price = 12} }
                 } },
                 null, "Екатеринбург" },
             new object[] { new List<ProductOrderModel>() 
-            { new ProductOrderModel { productModels = new ProductModel{Id = 1, Name = "Хлеб", Price = 12}
+            { new ProductOrderModel { ProductModels = new ProductModel[]{new ProductModel(){Id = 1, Name = "Хлеб", Price = 12} }
 
             } },
             "Хлеб свежий",null}
